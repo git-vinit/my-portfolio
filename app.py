@@ -192,4 +192,4 @@ def predict_spam():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False,'0.0.0.0')
