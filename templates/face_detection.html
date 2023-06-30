@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Detection System</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/face.css">
+    <script>
+        $(document).ready(function() {
+            $('#upload-form').submit(function(e) {
+                e.preventDefault(); // Prevent form submission
+                
+                var formData = new FormData(this);
+                
+                $.ajax({
+                    url: '/detect',
+                    type: 'POST',
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        var img = document.createElement('img');
+                        img.src = 'data:image/jpeg;base64,' + response;
+                        img.alt = 'Detected Faces';
+                        img.style.maxWidth = '100%';
+                        $('#result-container').html(img); // Display the result image
+                    },
+                    error: function(error) {
+                        console.error('Error detecting faces:', error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Face Detection System</h1>
+    <form id="upload-form" method="POST" action="/detect" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Detect Faces</button>
+    </form>
+    <div id="result-container"></div>
+</body>
+
+<footer class="footer">
+    <div class="footerContainer">
+        <p class="copyright"> Made with &#x1F497 by VINIT </p>
+    </div>
+    
+</html>

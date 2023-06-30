@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #777;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .footerContainer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <h2>{{ weather_data['name'] }}, {{ weather_data['sys']['country'] }}</h2>
+    <p>Temperature: {{ weather_data['main']['temp'] }}°C</p>
+    <p>Weather: {{ weather_data['weather'][0]['description'] }}</p>
+</body>
+<footer class="footer">
+    <div class="footerContainer">
+        <p class="copyright"> Made with &#x1F497 by VINIT </p>
+    </div>
+
+</html>

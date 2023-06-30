@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction Result</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .footerContainer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Price Prediction Result</h1>
+    <p>Symbol: {{ symbol }}</p>
+    <p>Predicted price: ${{ predicted_price }}</p>
+    <img src="data:image/png;base64,{{ plot_data }}" alt="Stock Price Plot">
+</body>
+
+<footer class="footer">
+    <div class="footerContainer">
+        <p class="copyright"> Made with &#x1F497 by VINIT </p>
+    </div>
+</html>
