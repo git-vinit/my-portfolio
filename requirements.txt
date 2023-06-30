@@ -1,0 +1,10 @@
+flask
+matplotlib
+io
+base64
+cv2
+os
+requests
+pytesseract
+pickle
+joblib
